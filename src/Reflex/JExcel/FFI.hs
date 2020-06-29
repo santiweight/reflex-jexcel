@@ -143,8 +143,6 @@ newJExcel element
         (y1 :: Int) <- floor <$> valToNumber y1'
         (x2 :: Int) <- floor <$> valToNumber x2'
         (y2 :: Int) <- floor <$> valToNumber y2'
-        liftJSM $ print (x1, y1)
-        liftJSM $ print (x2, y2)
         onselection handlers $ OnSelection (x1, y1) (x2, y2))
     js_config ^. jss "onsort" (fun $ \_ _ _ -> onsort handlers $ OnSort)
     js_config ^. jss "onresize" (fun $ \_ _ _ -> onresize handlers $ OnResize)
